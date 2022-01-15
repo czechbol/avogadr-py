@@ -2,7 +2,6 @@ import argparse
 import asyncio
 import json
 import os
-import pathlib
 
 import aiofiles
 import aiohttp
@@ -27,6 +26,11 @@ async def download(
         output_folder += "/"
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
+
+    if bg_colour.startswith("#"):
+        bg_colour = bg_colour.lstrip("#")
+    if fg_colour.startswith("#"):
+        fg_colour = fg_colour.lstrip("#")
 
     for compound in compounds:
         avogadr_link = (
@@ -54,49 +58,49 @@ async def main():
         "--input",
         default="compounds.json",
         type=str,
-        help="JSON formatted compound list",
+        help="JSON formatted compound list. Defaults to 'compounds.json'.",
     )
     parser.add_argument(
         "-o",
         "--output-folder",
         default="output/",
         type=str,
-        help="Folder to output files to",
+        help="Folder to output files to. Defaults to 'output/'.",
     )
     parser.add_argument(
         "-b",
         "--background",
         default="24283b",
         type=str,
-        help="Background colour in HEX format",
+        help="Background colour in HEX format. Defaults to '24283b'.",
     )
     parser.add_argument(
         "-f",
         "--foreground",
-        default="bb9af7",
+        default="7aa2f7",
         type=str,
-        help="Foreground colour in HEX format",
+        help="Foreground colour in HEX format. Defaults to '7aa2f7'.",
     )
     parser.add_argument(
         "-W",
         "--width",
         default="1920",
         type=int,
-        help="Image width in pixels",
+        help="Image width in pixels. Defaults to '1920'.",
     )
     parser.add_argument(
         "-H",
         "--height",
         default="1080",
         type=int,
-        help="Image height in pixels",
+        help="Image height in pixels. Defaults to '1080'.",
     )
     parser.add_argument(
         "-n",
         "--no-include-name",
         action="store_true",
         default=False,
-        help="Don't include compound names",
+        help="Don't include compound names. Defaults to 'False'.",
     )
     args = parser.parse_args()
 
