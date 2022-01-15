@@ -31,7 +31,7 @@ options:
   -b BACKGROUND, --background BACKGROUND
                         Background colour in HEX format. Defaults to '24283b'.
   -f FOREGROUND, --foreground FOREGROUND
-                        Foreground colour in HEX format. Defaults to 'bb9af7'.
+                        Foreground colour in HEX format. Defaults to '7aa2f7'.
   -W WIDTH, --width WIDTH
                         Image width in pixels. Defaults to '1920'.
   -H HEIGHT, --height HEIGHT
