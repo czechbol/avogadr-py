@@ -42,6 +42,8 @@ options:
 
 ## Example
 
+You can see how the compounds JSON is structured in the [compounds.json](https://github.com/czechbol/avogadr-py/blob/main/compounds.json) file. Feel free to use it too.
+
 ```console
 foo@bar:~$ avogadr-py -i compounds.json -W 3840 -H 2160 -o output/2160p/blue -f 7aa2f7
 ```
